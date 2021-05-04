@@ -8,9 +8,14 @@ public class RoomChoiceSelector {
 	 * @return roomAmount
 	 */
 	public static double roomsPrice(String roomChoice) {
-		/* Get values based on key */
-		double roomAmount = DisplayRoomManager.roomAvailable.get(roomChoice);
-		System.out.println("Amount for the room you've booked for "+roomChoice + "with Rs." + roomAmount);
+		double roomAmount;
+		if (roomChoice == "Mountain View" || roomChoice == "Night Ocean View" || roomChoice == "Night City View") {
+			/* Get values based on key */
+			roomAmount = DisplayRoomManager.roomAvailable.get(roomChoice);
+			System.out.println("Amount for the room you've booked for " + roomChoice + "with Rs." + roomAmount);
+		} else {
+			throw new IllegalArgumentException("Invalid Option");
+		}
 		return roomAmount;
 	}
 

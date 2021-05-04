@@ -10,8 +10,7 @@ public class HourCalculator {
 	 * 
 	 * @param startDate
 	 * @param endDate
-	 * @return long type true- if returns a total hours of stay in hotel false-
-	 *         if throws exception
+	 * @return float type returns a total hours of stay in hotel
 	 */
 	public static float findingHours(String startDate, String endDate) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
@@ -19,13 +18,13 @@ public class HourCalculator {
 		// Try Class
 		try {
 			Date d1 = sdf.parse(startDate);
-			// System.out.println(d1);
 			Date d2 = sdf.parse(endDate);
 			long differenceInTime = d2.getTime() - d1.getTime();
 			totalHour = differenceInTime / 3600000;
 			System.out.println("Total Hours spent at Hotel: " + totalHour);
 		} catch (ParseException e) {
-			e.printStackTrace();
+			System.out.println("Invalid Date and Time format");
+			totalHour = 0;
 		}
 		return totalHour;
 	}

@@ -36,4 +36,17 @@ class TestRoomDisplayAndChoiceManager {
 		assertEquals(15000.0, output);
 	}
 
+	/**
+	 * In case of Invalid User room choice selection
+	 */
+	@Test
+	public void InvalidroomChoice() {
+		try {
+			String roomChoice = " ";
+			RoomChoiceSelector.roomsPrice(roomChoice);
+			fail();
+		} catch (IllegalArgumentException e) {
+			assertEquals("Invalid Option", e.getMessage());
+		}
+	}
 }

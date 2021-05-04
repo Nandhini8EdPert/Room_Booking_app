@@ -5,7 +5,9 @@ import org.junit.jupiter.api.Test;
 
 class TestPaymentCardValidation {
 
-	// to check card number length whether its 16 or not
+	/**
+	 * to check card number length whether its 16 or not
+	 */
 	@Test
 	public void cardNumberLengthCheck() {
 		String cardNo = " 8765343312345678 ";
@@ -13,18 +15,23 @@ class TestPaymentCardValidation {
 		assertEquals("Valid Card Number", output);
 	}
 
+	/**
+	 * to check invalid card number length whether its 16 or not
+	 */
 	@Test
 	public void cardNumberLengthInvalid() {
 		try {
 			String cardNo = "87655678";
 			PaymentCardValidation.cardNumberLength(cardNo);
 			fail();
-		}catch(IllegalArgumentException e) {
-			assertEquals("Invalid Card Number",e.getMessage());
+		} catch (IllegalArgumentException e) {
+			assertEquals("Invalid Card Number", e.getMessage());
 		}
 	}
 
-	// to check card validity year and month
+	/**
+	 * to check card validity year and month
+	 */
 	@Test
 	public void cardValid() {
 		String cardNo = "2021-09";
@@ -32,14 +39,17 @@ class TestPaymentCardValidation {
 		assertEquals("Valid Expiry Year", output);
 	}
 
+	/**
+	 * to check invalid card validity year and month
+	 */
 	@Test
 	public void cardInvalid() {
 		try {
-		String cardNo = "2021-02";
-		PaymentCardValidation.creditcardValidyear(cardNo);
-		fail();
-		}catch(IllegalArgumentException e) {
-		assertEquals("Invalid Card Expiry Year", e.getMessage());
+			String cardNo = "2021-02";
+			PaymentCardValidation.creditcardValidyear(cardNo);
+			fail();
+		} catch (IllegalArgumentException e) {
+			assertEquals("Invalid Card Expiry Year", e.getMessage());
 		}
 	}
 

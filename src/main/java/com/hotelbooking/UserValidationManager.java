@@ -2,7 +2,7 @@ package com.hotelbooking;
 
 public class UserValidationManager {
 	/**
-	 * getting password and checking whether it's valid or not
+	 * getting password and checking whether it is valid or not
 	 * 
 	 * @param pwd
 	 * @return String
@@ -14,10 +14,9 @@ public class UserValidationManager {
 		}
 		return "Valid Password";
 	}
-	
-	
+
 	/**
-	 * checking mobile number is valid or not
+	 * checking mobile number whether it is valid or not
 	 * 
 	 * @param mobNo
 	 * @return String
@@ -29,6 +28,5 @@ public class UserValidationManager {
 		}
 		return "Valid Mobile Number";
 	}
-
 
 }

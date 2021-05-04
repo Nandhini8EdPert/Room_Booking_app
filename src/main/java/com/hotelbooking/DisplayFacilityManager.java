@@ -3,6 +3,9 @@ package com.hotelbooking;
 import java.util.HashMap;
 
 public class DisplayFacilityManager {
+	/**
+	 * hash map declaration
+	 */
 	static public HashMap<String, Integer> acOption = new HashMap<String, Integer>();
 	static {
 		acOption.put("With AC", 10);
@@ -15,13 +18,12 @@ public class DisplayFacilityManager {
 		foodOption.put("Without Food", 0);
 	}
 
-	public static HashMap<String,Integer>pickUpDropOption=new HashMap<String,Integer>();
+	public static HashMap<String, Integer> pickUpDropOption = new HashMap<String, Integer>();
 	static {
 		pickUpDropOption.put("Need a Pik-Up and Drop", 700);
 		pickUpDropOption.put("Not interested in Transport option", 0);
 	}
-	
-	
+
 	/**
 	 * to display the option with AC allowing user to choose their wish
 	 * 
@@ -53,7 +55,7 @@ public class DisplayFacilityManager {
 	 * @param pickUpDropChoice
 	 * @return pickUpDropCharge
 	 */
-	public static void pickUpDropDisplay( ) {
+	public static void pickUpDropDisplay() {
 		for (String pickUpDropWish : pickUpDropOption.keySet()) {
 			double pickUpDropCharge = pickUpDropOption.get(pickUpDropWish);
 			System.out.println("Room --> " + pickUpDropWish + ", Price --> " + pickUpDropCharge);

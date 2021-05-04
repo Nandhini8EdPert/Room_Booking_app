@@ -5,8 +5,8 @@ public class BillManager {
 	 * calling the appropriate manager to calculate the total bill amount with user
 	 * choice of input from test case.
 	 */
-	public static double totalBill(String startDate, String endDate, String roomChoice, String acChoice, String foodChoice,
-			String pickUpDropChoice) {
+	public static double totalBill(String startDate, String endDate, String roomChoice, String acChoice,
+			String foodChoice, String pickUpDropChoice) {
 		// checking Check-In date is valid or not
 		DateTimeUtil.checkInDate(startDate);
 
@@ -14,7 +14,7 @@ public class BillManager {
 		DateTimeUtil.checkOutDate(startDate, endDate);
 
 		// calculating total hours
-		long totalHours =  HourCalculator.findingHours(startDate, endDate);
+		float totalHours = HourCalculator.findingHours(startDate, endDate);
 
 		// calculating amount with choice of room selection
 		double roomCharge = RoomChoiceSelector.roomsPrice(roomChoice);
@@ -23,7 +23,7 @@ public class BillManager {
 		double acCharge = FacilityChoiceSelector.acNonAcSelection(acChoice);
 
 		// calculating amount with choice of with food / without food
-		double foodCharge =FacilityChoiceSelector.foodWithoutFoodSelection(foodChoice);
+		double foodCharge = FacilityChoiceSelector.foodWithoutFoodSelection(foodChoice);
 
 		// calculating amount with choice of Pick-Up and drop
 		double PickUpDropCharge = FacilityChoiceSelector.pickUpDropSelection(pickUpDropChoice);

@@ -27,11 +27,11 @@ public class PaymentCardValidation {
 	 */
 	public static String cardNumberLength(String CardNumber) {
 		String cardNumberTrim = CardNumber.trim();
-		System.out.println("Length of Card Number: "+cardNumberTrim.length());
+		System.out.println("Length of Card Number: " + cardNumberTrim.length());
 		if (cardNumberTrim.length() != 16)// TO CHECK THE LENGTH OF A STRING
 		{
 			throw new IllegalArgumentException("Invalid Card Number");
-		} 
+		}
 		return "Valid Card Number";
 	}
 

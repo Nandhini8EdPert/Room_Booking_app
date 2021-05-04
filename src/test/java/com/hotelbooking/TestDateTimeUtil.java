@@ -4,9 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-
 class TestDateTimeUtil {
-	// Test case to check the Check-In date
+	/**
+	 * Test case to check the Check-In date is valid or not
+	 */
 	@Test
 	public void testCheckInPastDays() {
 		String bdate = "2021-03-04";
@@ -16,7 +17,7 @@ class TestDateTimeUtil {
 
 	@Test
 	public void testchekIntoDay() {
-		String bdate = "2021-05-03";
+		String bdate = "2021-05-04";
 		String Output = DateTimeUtil.checkInDate(bdate);
 		assertEquals("Prior booking is required", Output);
 	}
@@ -28,7 +29,9 @@ class TestDateTimeUtil {
 		assertEquals("Good to go with Check-In date", Output);
 	}
 
-	// Test case to check Check-Out date
+	/**
+	 * to compare the Check-Out date with Check-In date
+	 */
 	@Test
 	public void checkOuttodays() {
 		String startDate = "2021-06-06 01:10";// Given startDate
