@@ -38,7 +38,6 @@ class TestUserValidationManager {
 	public void addingUserAndValidatingInvalidInput() {
 		long mobileNo = 98765431L;
 		String pwd = "123478";
-		UserManager.addUser(mobileNo, pwd);
 		try {
 			UserValidationManager.mobileNumberCheck(mobileNo);
 			fail();
@@ -51,7 +50,6 @@ class TestUserValidationManager {
 		} catch (IllegalArgumentException e) {
 			assertEquals("Invalid Password", e.getMessage());
 		}
-		UserManager.deleteUser(mobileNo);
 
 	}
 
