@@ -17,7 +17,7 @@ class TestDateTimeUtil {
 
 	@Test
 	public void testchekIntoDay() {
-		String bdate = "2021-05-04";
+		String bdate = "2021-05-05";
 		String Output = DateTimeUtil.checkInDate(bdate);
 		assertEquals("Prior booking is required", Output);
 	}
@@ -54,6 +54,7 @@ class TestDateTimeUtil {
 		String endDate = "2021-06-03 06:30";// Given endDate
 		String output = DateTimeUtil.checkOutDate(startDate, endDate);
 		assertEquals("Please check your Check Out date", output);
+		
 	}
-
+	
 }
